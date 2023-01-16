@@ -24,4 +24,22 @@ echo "Class: " . get_class($userOne) . '<br>';
 
 echo $userOne->userName . '<br>';
 echo $userOne->userEmail . '<br>';
-echo $userOne->addFriend();
+echo $userOne->addFriend() . '<br>';
+
+$userTwo->userName = 'yoshi';
+$userTwo->userEmail = 'yoshi@gmail.com';
+
+echo $userTwo->userName . '<br>';
+echo $userTwo->userEmail . '<br>';
+echo $userTwo->addFriend() . '<br>';
+
+
+// Find class properties
+echo '<pre>';
+print_r(get_class_vars('User'));
+echo '</pre>';
+
+// Find class methods
+echo '<pre>';
+print_r(get_class_methods('User'));
+echo '</pre>';
