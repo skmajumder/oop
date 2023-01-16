@@ -1,10 +1,20 @@
 <?php
 
+/** @User */
 class User
 {
     /** @var string */
-    public $userName = "ruy";
-    public $userEmail = 'ruy@gmail.com';
+    public $userName;
+    public $userEmail;
+
+    /**
+     * @method constructor
+     */
+    public function __construct($userName, $userEmail)
+    {
+        $this->userName = $userName;
+        $this->userEmail = $userEmail;
+    }
 
     /**
      * @method addFriend
@@ -17,8 +27,8 @@ class User
 
 }
 
-$userOne = new User();
-$userTwo = new User();
+$userOne = new User("mario", "marion@gmail.com");
+$userTwo = new User("kerry", "kerry@gmail.com");
 
 echo "Class: " . get_class($userOne) . '<br>';
 
@@ -26,20 +36,17 @@ echo $userOne->userName . '<br>';
 echo $userOne->userEmail . '<br>';
 echo $userOne->addFriend() . '<br>';
 
-$userTwo->userName = 'yoshi';
-$userTwo->userEmail = 'yoshi@gmail.com';
-
 echo $userTwo->userName . '<br>';
 echo $userTwo->userEmail . '<br>';
 echo $userTwo->addFriend() . '<br>';
 
 
 // Find class properties
-echo '<pre>';
-print_r(get_class_vars('User'));
-echo '</pre>';
+//echo '<pre>';
+//print_r(get_class_vars('User'));
+//echo '</pre>';
 
 // Find class methods
-echo '<pre>';
-print_r(get_class_methods('User'));
-echo '</pre>';
+//echo '<pre>';
+//print_r(get_class_methods('User'));
+//echo '</pre>';
